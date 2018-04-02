@@ -364,8 +364,9 @@ var input = {
         // 3 => user joined room
         // 4 => user left room
         // 10 => message deleted
+        // 15 => user kicked
         var et = msg.event_type;
-        if (et === 3 || et === 4) {
+        if (et === 3 || et === 4 || et === 15) {
             this.handleUserEvent(msg);
             return;
         }
@@ -447,6 +448,9 @@ var input = {
         */
         else if (et === 4) {
             IO.fire('userleave', msg);
+        }
+        else if (et === 15) {
+            IO.fire('kick', msg);
         }
     },
 
