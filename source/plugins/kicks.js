@@ -41,7 +41,7 @@ module.exports = function (bot) {
 
                 var githubBody = kickObj.content;
                 if (lastMsgId) {
-                    githubBody += '\nhttps://chat.stackoverflow.com/transcript/message/' + lastMsgI;
+                    githubBody += '\nhttps://chat.stackoverflow.com/transcript/message/' + lastMsgId;
                 }
 
                 bot.IO.xhr({
