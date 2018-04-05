@@ -39,7 +39,7 @@ module.exports = function (bot) {
 
             if (bot.config.githubKey && bot.config.githubKey.length) {
 
-                let githubBody = kickObj.content;
+                var githubBody = kickObj.content;
                 if (lastMsgId) {
                     githubBody += '\nhttps://chat.stackoverflow.com/transcript/message/' + lastMsgI;
                 }
